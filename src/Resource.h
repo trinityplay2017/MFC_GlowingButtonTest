@@ -2,7 +2,6 @@
 #pragma once
 
 #define IDD_MFC_GLOWINGBUTTONTEST_DIALOG 102
-#define IDR_MAINFRAME                   128
 
 #define IDC_BTN_NORMAL                  1001
 #define IDC_BTN_RAINBOW                 1002

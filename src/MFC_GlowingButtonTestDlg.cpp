@@ -10,7 +10,6 @@
 CMFCGlowingButtonTestDlg::CMFCGlowingButtonTestDlg(CWnd* pParent)
 	: CDialogEx(IDD_MFC_GLOWINGBUTTONTEST_DIALOG, pParent)
 {
-	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
 void CMFCGlowingButtonTestDlg::DoDataExchange(CDataExchange* pDX)
@@ -20,16 +19,12 @@ void CMFCGlowingButtonTestDlg::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(CMFCGlowingButtonTestDlg, CDialogEx)
 	ON_WM_PAINT()
-	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BTN_TOGGLE_RAINBOW, &CMFCGlowingButtonTestDlg::OnBnClickedToggleRainbow)
 END_MESSAGE_MAP()
 
 BOOL CMFCGlowingButtonTestDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-
-	SetIcon(m_hIcon, TRUE);
-	SetIcon(m_hIcon, FALSE);
 
 	// Subclass the placeholder buttons from the dialog resource
 	m_btnNormal.SubclassDlgItem(IDC_BTN_NORMAL, this);
@@ -65,25 +60,7 @@ BOOL CMFCGlowingButtonTestDlg::OnInitDialog()
 
 void CMFCGlowingButtonTestDlg::OnPaint()
 {
-	if (IsIconic())
-	{
-		CPaintDC dc(this);
-		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
-		const int cx = GetSystemMetrics(SM_CXICON);
-		const int cy = GetSystemMetrics(SM_CYICON);
-		CRect rc;
-		GetClientRect(&rc);
-		dc.DrawIcon((rc.Width() - cx + 1) / 2, (rc.Height() - cy + 1) / 2, m_hIcon);
-	}
-	else
-	{
-		CDialogEx::OnPaint();
-	}
-}
-
-HCURSOR CMFCGlowingButtonTestDlg::OnQueryDragIcon()
-{
-	return static_cast<HCURSOR>(m_hIcon);
+	CDialogEx::OnPaint();
 }
 
 void CMFCGlowingButtonTestDlg::OnBnClickedToggleRainbow()

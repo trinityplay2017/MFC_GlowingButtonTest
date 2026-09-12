@@ -49,10 +49,6 @@ BEGIN
     DEFPUSHBUTTON   "Close",IDOK,130,160,60,18
 END
 
-#ifndef _MAC
-IDR_MAINFRAME           ICON                    "res\\MFC_GlowingButtonTest.ico"
-#endif
-
 #endif
 
 #ifndef APSTUDIO_INVOKED

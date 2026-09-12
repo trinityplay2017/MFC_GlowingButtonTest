@@ -15,13 +15,10 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);
 	virtual BOOL OnInitDialog();
 	afx_msg void OnPaint();
-	afx_msg HCURSOR OnQueryDragIcon();
 	afx_msg void OnBnClickedToggleRainbow();
 	DECLARE_MESSAGE_MAP()
 
 private:
-	HICON m_hIcon = nullptr;
-
 	CGlowingButton m_btnNormal;
 	CGlowingButton m_btnRainbow;
 	CGlowingButton m_btnRounded;
