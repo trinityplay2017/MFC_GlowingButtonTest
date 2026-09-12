@@ -1,5 +1,5 @@
 // Microsoft Visual C++ generated resource script.
-#include "Resource.h"
+#include "../src/Resource.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
 #include "afxres.h"
@@ -37,7 +37,7 @@ END
 #endif
 
 IDD_MFC_GLOWINGBUTTONTEST_DIALOG DIALOGEX 0, 0, 320, 200
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_SIZEBOX
 CAPTION "MFC Glowing Button Example"
 FONT 9, "Segoe UI", 0, 0, 0x1
 BEGIN

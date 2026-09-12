@@ -91,7 +91,7 @@ protected:
 		}
 
 		// Clamp radius
-		radius = std::min(radius, std::min(width, height) / 2);
+		radius = (std::min)(radius, (std::min)(width, height) / 2);
 
 		const double straightW = width  - 2.0 * radius;
 		const double straightH = height - 2.0 * radius;
