@@ -24,4 +24,11 @@ private:
 	CGlowingButton m_btnRounded;
 	CGlowingButton m_btnDisabled;
 	CGlowingButton m_btnToggle;
+	CGlowingButton m_btnNoBorder;
+	CGlowingButton m_btnBlueBorder;
+	CGlowingButton m_btnGreenHover;
+	CGlowingButton m_btnOrangePress;
+	CGlowingButton m_btnPill;
+	CGlowingButton m_btnFlatDark;
+	CGlowingButton m_btnAccent;
 };

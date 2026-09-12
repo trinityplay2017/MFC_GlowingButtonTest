@@ -34,6 +34,7 @@ public:
 	void SetDisabledColor(COLORREF c)  { m_disabledColor = c; }
 	void SetRoundRadius(int r);
 	void SetAnimDuration(int ms)       { m_animDuration = ms; }
+	void SetShowBorder(bool show)      { m_showBorder = show; }
 
 	void SetWindowTextW(LPCWSTR str);
 	void SetWindowTextW(int val);
@@ -82,4 +83,5 @@ private:
 	COLORREF m_hoverBackColor = RGB(40, 40, 40);
 	COLORREF m_textColor      = RGB(255, 255, 255);
 	int      m_roundRadius    = 0;
+	bool     m_showBorder     = true;
 };

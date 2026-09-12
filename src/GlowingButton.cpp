@@ -41,6 +41,7 @@ void CGlowingButton::Initialize()
 	m_hoverBackColor  = RGB(40, 40, 40);
 	m_textColor       = RGB(255, 255, 255);
 	m_roundRadius     = 0;
+	m_showBorder      = true;
 	m_prevBackColor   = m_backColor;
 	m_targetBackColor = m_backColor;
 	m_rainbowOffset   = 0.0;
@@ -187,21 +188,24 @@ void CGlowingButton::DrawItem(LPDRAWITEMSTRUCT dis)
 	COLORREF clrBack = InternalLerpColor(m_prevBackColor, m_targetBackColor, t);
 	memDC.FillSolidRect(&rc, clrBack);
 
-	const int borderPad = 0;
-	const int w = rc.Width();
-	const int h = rc.Height();
-	const int rad = m_roundRadius;
+	if (m_showBorder || m_rainbow.enable)
+	{
+		const int borderPad = 0;
+		const int w = rc.Width();
+		const int h = rc.Height();
+		const int rad = m_roundRadius;
 
-	DrawRainbowRoundedRect(
-		memDC.GetSafeHdc(),
-		borderPad, borderPad,
-		w - borderPad - 1, h - borderPad - 1,
-		(rad / 2) + 2,
-		m_rainbowOffset,
-		1,
-		!m_rainbow.enable || staticBorder,
-		m_borderColor,
-		255);
+		DrawRainbowRoundedRect(
+			memDC.GetSafeHdc(),
+			borderPad, borderPad,
+			w - borderPad - 1, h - borderPad - 1,
+			(rad / 2) + 2,
+			m_rainbowOffset,
+			1,
+			!m_rainbow.enable || staticBorder,
+			m_borderColor,
+			255);
+	}
 
 	// Text
 	memDC.SetBkMode(TRANSPARENT);
